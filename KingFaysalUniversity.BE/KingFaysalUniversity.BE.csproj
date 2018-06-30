@@ -101,8 +101,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="API\" />
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Infrastructure\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
