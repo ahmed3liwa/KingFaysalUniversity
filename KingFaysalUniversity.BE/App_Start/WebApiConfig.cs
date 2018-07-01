@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Swashbuckle.Application;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -15,10 +16,19 @@ namespace KingFaysalUniversity.BE
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+            name: "Swagger UI",
+            routeTemplate: "",
+            defaults: null,
+            constraints: null,
+            handler: new RedirectHandler(SwaggerDocsConfig.DefaultRootUrlResolver, "swagger/ui/index"));
+
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
         }
     }
 }
